@@ -52,24 +52,42 @@ html, body {
   color: rgba(220, 225, 240, 0.75);
 }
 
-/* 🧠 BEYİN – MORUN TAM ORTASI */
-.hero-brain {
-  position: absolute;
-  top: 62%;                 /* 🔽 biraz daha aşağı */
-  left: 50%;
-  transform: translate(-50%, -50%);
+@media (max-width: 768px) {
+  .hero-brain {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
 
-  width: min(360px, 48vw);  /* 🔽 sahneye saygı */
-  max-width: 420px;
-  height: auto;
+    margin: 32px auto 0;
+    width: 160px;
 
-  z-index: 2;
-  opacity: 0.95;
+    filter:
+      drop-shadow(0 0 20px rgba(190, 100, 220, 0.35))
+      drop-shadow(0 0 40px rgba(140, 70, 190, 0.25));
+  }
+}
 
-  filter:
-    drop-shadow(0 0 28px rgba(190, 100, 220, 0.4))
-    drop-shadow(0 0 70px rgba(140, 70, 190, 0.3));
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100vh;
+    padding: 60px 20px;
+  }
 
-  pointer-events: none;
+  .hero h1 {
+    font-size: 42px;
+    letter-spacing: 0.2em;
+    text-align: center;
+  }
+
+  .hero .coming-soon {
+    font-size: 12px;
+    margin-top: 12px;
+  }
+
+  .hero img {
+    width: 160px;
+    margin-top: 40px;
+  }
 }
 
