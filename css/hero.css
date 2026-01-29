@@ -9,85 +9,96 @@ html, body {
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
 
-  /* 🔥 MOR IŞIK BEYNİN ARKASINDA */
-  background: radial-gradient(
-    ellipse at center 58%,
-    #7a3f6d 0%,
-    #5a3564 18%,
-    #352f5f 35%,
-    #1b1f45 60%,
-    #070a16 100%
+  /* 🧘‍♂️ SAHNE ARKASI – STABİL */
+  background: linear-gradient(
+    180deg,
+    #0b1026 0%,
+    #1b1f45 45%,
+    #0b1026 100%
   );
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-/* YAZILAR */
+/* YAZI ALANI – MARKA ÖNCELİKLİ */
 .hero-content {
-  position: absolute;
-  top: 38%;                /* 🔴 yazı biraz yukarı */
-  transform: translateY(-50%);
   text-align: center;
   z-index: 3;
+  margin-bottom: 56px; /* beyinle mesafe */
 }
 
-.coming-soon {
-  font-family: "Times New Roman", Georgia, serif;
-  font-size: clamp(56px, 7vw, 96px);
-  letter-spacing: 0.28em;
+/* MARKA */
+.brand-title {
+  font-size: 72px;          /* 🔥 ASIL HAMLE */
+  letter-spacing: 0.22em;
+  font-weight: 600;
   color: #f4f5f8;
   margin: 0;
 }
 
+/* COMING SOON (önemsiz ama temiz) */
 .coming-sub {
+  font-size: 13px;
+  letter-spacing: 0.34em;
+  margin-top: 18px;
+  color: rgba(220, 225, 240, 0.65);
+}
+
+/* MOBİL */
+@media (max-width: 480px) {
+  .brand-title {
+    font-size: 44px;
+    letter-spacing: 0.18em;
+  }
+
+  .coming-sub {
+    font-size: 11px;
+    letter-spacing: 0.28em;
+  }
+}
+
+/* BEYİNİ BİR TIK AŞAĞI AL */
+.hero-brain {
   margin-top: 24px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  letter-spacing: 0.32em;
-  color: rgba(220, 225, 240, 0.75);
 }
 
-@media (max-width: 768px) {
-  .hero-brain {
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-
-    margin: 32px auto 0;
-    width: 160px;
-
-    filter:
-      drop-shadow(0 0 20px rgba(190, 100, 220, 0.35))
-      drop-shadow(0 0 40px rgba(140, 70, 190, 0.25));
+@media (min-width: 1400px) {
+  .brand-title {
+    font-size: 78px;
   }
 }
 
-@media (max-width: 768px) {
-  .hero {
-    min-height: 100vh;
-    padding: 60px 20px;
-  }
 
-  .hero h1 {
-    font-size: 42px;
-    letter-spacing: 0.2em;
-    text-align: center;
-  }
+/* BEYİN */
+.hero-brain {
+  position: relative;
+  z-index: 2;
+  width: 260px;
+  height: auto;
+  display: block;
 
-  .hero .coming-soon {
-    font-size: 12px;
-    margin-top: 12px;
-  }
+  backface-visibility: hidden;
+  transform: translateZ(0);
 
-  .hero img {
-    width: 160px;
-    margin-top: 40px;
-  }
+  /* 🧠 SICAK ÇEKİRDEK – 2mm TAŞMA */
+  filter:
+    drop-shadow(0 0 14px rgba(175, 70, 210, 0.35))   /* mor temel */
+    drop-shadow(0 0 26px rgba(155, 55, 185, 0.30))  /* derin mor */
+    drop-shadow(0 0 34px rgba(190, 60, 120, 0.22)); /* 🔥 mor→kırmızı ısı */
 }
+
+.coming-soon {
+  color: #f4f5f8 !important;
+}
+
+.coming-sub {
+  color: rgba(220, 225, 240, 0.75) !important;
+}
+
 
